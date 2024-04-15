@@ -807,15 +807,4 @@ impl Client {
 
 		self.insert_into_dht(records, block).await
 	}
-
-	pub async fn get_multiaddress_and_ip(&self) -> Result<Vec<String>> {
-		let addr = self
-			.get_multiaddress()
-			.await?
-			.into_iter()
-			.map(|addr| addr.to_string())
-			.collect::<Vec<_>>();
-
-		Ok(addr)
-	}
 }
